@@ -1,0 +1,48 @@
+/* Global styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #FAF8F4;
+  --blush: #E8D8CF;
+  --rose: #C4927A;
+  --rose-dark: #A87060;
+  --sage: #A8B5A0;
+  --sage-light: #D4DDD0;
+  --lavender: #C4B5D4;
+  --lavender-light: #E2DAF0;
+  --text-dark: #3D3530;
+  --text-mid: #6B5F58;
+  --text-light: #9B8F88;
+  --white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.3;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
