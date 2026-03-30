@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
       <div class="blob blob-2"></div>
       <div class="container">
         <div class="text">
-          <p class="pre-title">Digitális kismama napló</p>
+          <p class="pre-title">Kismama napló</p>
           <h1>Úton az anyaság felé</h1>
           <p class="subtitle"><em>32 hetes kreatív utazás a fogantatástól a megszületésig</em></p>
           <p class="desc">
@@ -30,7 +30,7 @@ import { Component } from '@angular/core';
   styles: [`
     .hero {
       position: relative;
-      background: linear-gradient(135deg, #f5ede8 0%, #ede8f0 50%, #e8f0ec 100%);
+      background: linear-gradient(135deg, #fcd8c8 0%, #e8d0f8 50%, #c8f0dc 100%);
       padding: 90px 24px 120px;
       overflow: hidden;
     }
@@ -42,13 +42,13 @@ import { Component } from '@angular/core';
     }
     .blob-1 {
       width: 500px; height: 500px;
-      background: #C4927A;
+      background: #D4563C;
       top: -150px; right: -100px;
       opacity: 0.15;
     }
     .blob-2 {
       width: 400px; height: 400px;
-      background: #A8B5A0;
+      background: #5EA855;
       bottom: -100px; left: -80px;
       opacity: 0.2;
     }
@@ -66,7 +66,7 @@ import { Component } from '@angular/core';
       font-size: 12px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #C4927A;
+      color: #D4563C;
       font-weight: 700;
       margin-bottom: 16px;
     }
@@ -108,15 +108,15 @@ import { Component } from '@angular/core';
       text-decoration: none;
     }
     .btn-primary {
-      background: #C4927A;
+      background: #D4563C;
       color: #fff;
-      border-color: #C4927A;
+      border-color: #D4563C;
     }
     .btn-primary:hover {
-      background: #A87060;
-      border-color: #A87060;
+      background: #B84030;
+      border-color: #B84030;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(196,146,122,0.35);
+      box-shadow: 0 8px 24px rgba(212,86,60,0.35);
     }
     .btn-ghost {
       background: transparent;

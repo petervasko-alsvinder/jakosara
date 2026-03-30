@@ -44,8 +44,8 @@ import { Component } from '@angular/core';
     }
     .badge {
       display: inline-block;
-      background: #E2DAF0;
-      color: #7A6A8A;
+      background: #D8C0F8;
+      color: #6B40C0;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;

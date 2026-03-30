@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
           <div class="card">
             <div class="icon">💛</div>
             <h3>Örök emlék</h3>
-            <p>Nyomtasd ki és köttess be, vagy tartsd digitálisan – a te döntésed, hogyan őrzöd meg ezt a kincset.</p>
+            <p>Egy gyönyörű fizikai napló, amit egész életed megőrizhetsz – és majd egyszer a gyermekednek is megmutathatsz.</p>
           </div>
         </div>
       </div>
@@ -44,8 +44,8 @@ import { Component } from '@angular/core';
     }
     .badge {
       display: inline-block;
-      background: #E8D8CF;
-      color: #C4927A;
+      background: #FBCDB8;
+      color: #D4563C;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -62,7 +62,7 @@ import { Component } from '@angular/core';
       line-height: 1.3;
     }
     h2 em {
-      color: #C4927A;
+      color: #D4563C;
       font-style: italic;
     }
     .lead {

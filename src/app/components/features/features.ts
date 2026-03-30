@@ -31,7 +31,7 @@ import { Component } from '@angular/core';
   styles: [`
     .features {
       padding: 100px 24px;
-      background: linear-gradient(180deg, #FAF8F4 0%, #f0ece8 100%);
+      background: linear-gradient(180deg, #FAF8F4 0%, #fce8e0 100%);
     }
     .container {
       max-width: 1100px;
@@ -43,8 +43,8 @@ import { Component } from '@angular/core';
     }
     .badge {
       display: inline-block;
-      background: #D4DDD0;
-      color: #5A7052;
+      background: #B8E0B0;
+      color: #2E8020;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -74,7 +74,7 @@ import { Component } from '@angular/core';
       line-height: 1.6;
     }
     .check {
-      color: #A8B5A0;
+      color: #5EA855;
       font-weight: 700;
       font-size: 1.1rem;
       flex-shrink: 0;
@@ -84,20 +84,20 @@ import { Component } from '@angular/core';
       display: inline-block;
       padding: 14px 32px;
       border-radius: 50px;
-      background: #C4927A;
+      background: #D4563C;
       color: #fff;
       font-family: 'Lato', sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.3s ease;
-      border: 2px solid #C4927A;
+      border: 2px solid #D4563C;
     }
     .btn:hover {
-      background: #A87060;
-      border-color: #A87060;
+      background: #B84030;
+      border-color: #B84030;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(196,146,122,0.35);
+      box-shadow: 0 8px 24px rgba(212,86,60,0.35);
     }
     .img-stack {
       position: relative;
@@ -133,6 +133,6 @@ export class Features {
     'Gondolatok, érzések, félelmek és örömök megörökítése',
     'Névötletek oldal – fiú és lány nevek',
     'Egyedi, watercolor illusztrációkkal díszített oldalak',
-    'PDF formátum – azonnal letölthető és nyomtatható',
+    'Prémium minőségű papír, spirálkötéses kivitel',
   ];
 }

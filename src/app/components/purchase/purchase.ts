@@ -9,20 +9,20 @@ import { Component } from '@angular/core';
       <div class="blob blob-2"></div>
       <div class="container">
         <div class="card">
-          <div class="tag">Digitális letöltés</div>
+          <div class="tag">Fizikai kismama napló</div>
           <h2>Úton az anyaság felé</h2>
-          <p class="subtitle">Kismama napló – PDF formátum</p>
+          <p class="subtitle">Spirálkötéses, prémium kismama napló</p>
           <div class="price">
             <span class="amount">3 990 Ft</span>
           </div>
           <ul class="perks">
-            <li><span class="icon">📥</span> Azonnali PDF letöltés</li>
-            <li><span class="icon">🖨️</span> Nyomtatható otthon vagy nyomdában</li>
-            <li><span class="icon">♾️</span> Korlátlan személyes használat</li>
-            <li><span class="icon">📱</span> Digitálisan is kitölthető</li>
+            <li><span class="icon">📦</span> Ingyenes szállítás Magyarországon</li>
+            <li><span class="icon">📖</span> Spirálkötéses, keményfedeles napló</li>
+            <li><span class="icon">✏️</span> Prémium minőségű, tintaálló papír</li>
+            <li><span class="icon">🎁</span> Ajándékcsomagolásban érkezik</li>
           </ul>
           <a href="#" class="btn" (click)="buy($event)">Megrendelem – 3 990 Ft</a>
-          <p class="note">Biztonságos fizetés · Azonnali hozzáférés</p>
+          <p class="note">Biztonságos fizetés · 3–5 munkanap szállítás</p>
         </div>
         <div class="info">
           <h3>Miért éri meg?</h3>
@@ -50,7 +50,7 @@ import { Component } from '@angular/core';
     .purchase {
       position: relative;
       padding: 100px 24px;
-      background: linear-gradient(135deg, #f0e8e2 0%, #e8e2f0 100%);
+      background: linear-gradient(135deg, #fce0d0 0%, #e0d0fc 100%);
       overflow: hidden;
     }
     .blob {
@@ -61,13 +61,13 @@ import { Component } from '@angular/core';
     }
     .blob-1 {
       width: 400px; height: 400px;
-      background: #C4B5D4;
+      background: #8A65CC;
       top: -100px; left: -80px;
       opacity: 0.3;
     }
     .blob-2 {
       width: 350px; height: 350px;
-      background: #C4927A;
+      background: #D4563C;
       bottom: -80px; right: -60px;
       opacity: 0.2;
     }
@@ -90,8 +90,8 @@ import { Component } from '@angular/core';
     }
     .tag {
       display: inline-block;
-      background: #E8D8CF;
-      color: #C4927A;
+      background: #FBCDB8;
+      color: #D4563C;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -117,7 +117,7 @@ import { Component } from '@angular/core';
     .amount {
       font-size: 3rem;
       font-weight: 700;
-      color: #C4927A;
+      color: #D4563C;
       font-family: 'Playfair Display', serif;
     }
     .perks {
@@ -141,7 +141,7 @@ import { Component } from '@angular/core';
       width: 100%;
       padding: 16px;
       border-radius: 50px;
-      background: #C4927A;
+      background: #D4563C;
       color: #fff;
       font-family: 'Lato', sans-serif;
       font-size: 1rem;
@@ -151,9 +151,9 @@ import { Component } from '@angular/core';
       margin-bottom: 16px;
     }
     .btn:hover {
-      background: #A87060;
+      background: #B84030;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(196,146,122,0.4);
+      box-shadow: 0 8px 24px rgba(212,86,60,0.4);
     }
     .note {
       font-size: 0.8rem;
