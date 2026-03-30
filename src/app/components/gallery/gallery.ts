@@ -35,7 +35,7 @@ import { Component } from '@angular/core';
   styles: [`
     .gallery {
       padding: 100px 24px;
-      background: #FAF8F4;
+      background: rgba(250,248,244,0.65);
     }
     .container {
       max-width: 1100px;

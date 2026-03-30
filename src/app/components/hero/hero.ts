@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <section class="hero">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
       <div class="container">
         <div class="text">
           <p class="pre-title">Kismama napló</p>
@@ -30,27 +28,9 @@ import { Component } from '@angular/core';
   styles: [`
     .hero {
       position: relative;
-      background: linear-gradient(135deg, #fcd8c8 0%, #e8d0f8 50%, #c8f0dc 100%);
+      background: transparent;
       padding: 90px 24px 120px;
       overflow: hidden;
-    }
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-    }
-    .blob-1 {
-      width: 500px; height: 500px;
-      background: #D4563C;
-      top: -150px; right: -100px;
-      opacity: 0.15;
-    }
-    .blob-2 {
-      width: 400px; height: 400px;
-      background: #5EA855;
-      bottom: -100px; left: -80px;
-      opacity: 0.2;
     }
     .container {
       max-width: 1100px;

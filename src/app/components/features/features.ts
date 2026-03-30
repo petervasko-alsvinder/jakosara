@@ -31,7 +31,7 @@ import { Component } from '@angular/core';
   styles: [`
     .features {
       padding: 100px 24px;
-      background: linear-gradient(180deg, #FAF8F4 0%, #fce8e0 100%);
+      background: rgba(250,248,244,0.65);
     }
     .container {
       max-width: 1100px;

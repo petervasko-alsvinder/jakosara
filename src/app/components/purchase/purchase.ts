@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <section class="purchase" id="vasarlas">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
       <div class="container">
         <div class="card">
           <div class="tag">Fizikai kismama napló</div>
@@ -50,26 +48,8 @@ import { Component } from '@angular/core';
     .purchase {
       position: relative;
       padding: 100px 24px;
-      background: linear-gradient(135deg, #fce0d0 0%, #e0d0fc 100%);
+      background: rgba(250,248,244,0.55);
       overflow: hidden;
-    }
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      pointer-events: none;
-    }
-    .blob-1 {
-      width: 400px; height: 400px;
-      background: #8A65CC;
-      top: -100px; left: -80px;
-      opacity: 0.3;
-    }
-    .blob-2 {
-      width: 350px; height: 350px;
-      background: #D4563C;
-      bottom: -80px; right: -60px;
-      opacity: 0.2;
     }
     .container {
       max-width: 1000px;
