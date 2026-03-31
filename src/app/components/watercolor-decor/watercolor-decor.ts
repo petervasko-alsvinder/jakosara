@@ -78,8 +78,32 @@ import { Component } from '@angular/core';
              HERO  (y 0–780)
              ════════════════════════════════ -->
 
-        <!-- Dusty rose amoeba – jobb oldal, NAGY (1300px széles) -->
-        <g filter="url(#wc-a)" fill="#C9968A" opacity="0.68" transform="translate(95, 18)">
+        <!-- BAL FELSŐ SAROK – zsálya corner, oldalon kívülről indul -->
+        <g filter="url(#wc-b)" fill="#96B095" opacity="0.68" transform="translate(-120, -140)">
+          <path d="M 50 48 C 2 102 -6 178 28 250 C 62 322 150 372 264 398
+                   C 378 424 515 422 626 395 C 737 368 828 318 842 258
+                   C 856 198 820 128 760 86 C 700 44 608 26 506 20
+                   C 404 14 295 24 198 38 C 118 48 62 22 50 48 Z"/>
+          <path opacity="0.50"
+                d="M 72 75 C 28 125 20 195 52 262 C 84 329 168 375 278 398
+                   C 388 421 518 418 625 393 C 732 368 818 320 830 263
+                   C 842 206 808 140 750 100 C 692 60 605 44 506 39
+                   C 407 34 304 44 212 57 C 138 67 82 48 72 75 Z"/>
+        </g>
+
+        <!-- BAL FELSŐ – arany felhő, felülről lóg be -->
+        <g filter="url(#wc-c)" fill="#C8A865" opacity="0.62" transform="translate(-60, -90)">
+          <path d="M 55 32 C 106 5 208 11 286 56 C 364 101 408 172 390 238
+                   C 372 304 316 342 246 344 C 176 346 102 320 55 270
+                   C 8 220 -6 155 16 98 C 30 58 22 46 55 32 Z"/>
+          <path opacity="0.50"
+                d="M 78 58 C 124 34 218 40 290 82 C 362 124 400 190 383 250
+                   C 366 310 314 342 250 343 C 186 344 118 319 75 274
+                   C 32 229 20 172 40 120 C 54 80 46 68 78 58 Z"/>
+        </g>
+
+        <!-- Rose amoeba – felső széléről indul be, enyhén negatív y -->
+        <g filter="url(#wc-a)" fill="#C9968A" opacity="0.65" transform="translate(-80, -60)">
           <path d="M 145 35 C 280 7 475 0 665 25 C 855 50 1020 73 1178 62
                    C 1278 54 1326 93 1318 145 C 1310 197 1256 237 1176 257
                    C 1096 277 988 267 876 281 C 764 295 656 320 538 337
@@ -93,32 +117,16 @@ import { Component } from '@angular/core';
                    C 30 176 68 126 122 96 C 148 78 156 68 168 60 Z"/>
         </g>
 
-        <!-- Zsálya sarok – bal alsó (870px széles) -->
-        <g filter="url(#wc-b)" fill="#96B095" opacity="0.62" transform="translate(-35, 388)">
+        <!-- Zsálya echo – jobb oldali szélről, hero közepe -->
+        <g filter="url(#wc-b)" fill="#96B095" opacity="0.45" transform="translate(1475, 340) scale(-1,1)">
           <path d="M 50 48 C 2 102 -6 178 28 250 C 62 322 150 372 264 398
                    C 378 424 515 422 626 395 C 737 368 828 318 842 258
                    C 856 198 820 128 760 86 C 700 44 608 26 506 20
                    C 404 14 295 24 198 38 C 118 48 62 22 50 48 Z"/>
-          <path opacity="0.50"
-                d="M 72 75 C 28 125 20 195 52 262 C 84 329 168 375 278 398
-                   C 388 421 518 418 625 393 C 732 368 818 320 830 263
-                   C 842 206 808 140 750 100 C 692 60 605 44 506 39
-                   C 407 34 304 44 212 57 C 138 67 82 48 72 75 Z"/>
         </g>
 
-        <!-- Arany felhő – bal felső (415px széles) -->
-        <g filter="url(#wc-c)" fill="#C8A865" opacity="0.58" transform="translate(18, 12)">
-          <path d="M 55 32 C 106 5 208 11 286 56 C 364 101 408 172 390 238
-                   C 372 304 316 342 246 344 C 176 346 102 320 55 270
-                   C 8 220 -6 155 16 98 C 30 58 22 46 55 32 Z"/>
-          <path opacity="0.50"
-                d="M 78 58 C 124 34 218 40 290 82 C 362 124 400 190 383 250
-                   C 366 310 314 342 250 343 C 186 344 118 319 75 274
-                   C 32 229 20 172 40 120 C 54 80 46 68 78 58 Z"/>
-        </g>
-
-        <!-- Rose echo – jobb alsó sarok -->
-        <g filter="url(#wc-c)" fill="#C9968A" opacity="0.38" transform="translate(1440, 560) scale(-1,1)">
+        <!-- Rose echo – jobb felső sarokból -->
+        <g filter="url(#wc-c)" fill="#C9968A" opacity="0.40" transform="translate(1500, -80) scale(-1,1)">
           <path d="M 55 32 C 106 5 208 11 286 56 C 364 101 408 172 390 238
                    C 372 304 316 342 246 344 C 176 346 102 320 55 270
                    C 8 220 -6 155 16 98 C 30 58 22 46 55 32 Z"/>
@@ -144,8 +152,8 @@ import { Component } from '@angular/core';
                    C 30 176 68 126 122 96 C 148 78 156 68 168 60 Z"/>
         </g>
 
-        <!-- Zsálya sarok – bal -->
-        <g filter="url(#wc-b)" fill="#96B095" opacity="0.52" transform="translate(-35, 1100)">
+        <!-- Zsálya sarok – bal, oldalon kívülről -->
+        <g filter="url(#wc-b)" fill="#96B095" opacity="0.52" transform="translate(-120, 1060)">
           <path d="M 50 48 C 2 102 -6 178 28 250 C 62 322 150 372 264 398
                    C 378 424 515 422 626 395 C 737 368 828 318 842 258
                    C 856 198 820 128 760 86 C 700 44 608 26 506 20
@@ -173,8 +181,8 @@ import { Component } from '@angular/core';
              MIT TARTALMAZ  (y 1560–2340)
              ════════════════════════════════ -->
 
-        <!-- Zsálya sarok – bal, nagy -->
-        <g filter="url(#wc-b)" fill="#96B095" opacity="0.60" transform="translate(-35, 1578)">
+        <!-- Zsálya sarok – bal, nagy, oldalon kívülről -->
+        <g filter="url(#wc-b)" fill="#96B095" opacity="0.60" transform="translate(-120, 1545)">
           <path d="M 50 48 C 2 102 -6 178 28 250 C 62 322 150 372 264 398
                    C 378 424 515 422 626 395 C 737 368 828 318 842 258
                    C 856 198 820 128 760 86 C 700 44 608 26 506 20
@@ -236,8 +244,8 @@ import { Component } from '@angular/core';
                    C 404 14 295 24 198 38 C 118 48 62 22 50 48 Z"/>
         </g>
 
-        <!-- Rose sarok – bal alsó -->
-        <g filter="url(#wc-c)" fill="#C9968A" opacity="0.42" transform="translate(-35, 2870)">
+        <!-- Rose sarok – bal alsó, oldalon kívülről -->
+        <g filter="url(#wc-c)" fill="#C9968A" opacity="0.42" transform="translate(-100, 2850)">
           <path d="M 50 48 C 2 102 -6 178 28 250 C 62 322 150 372 264 398
                    C 378 424 515 422 626 395 C 737 368 828 318 842 258
                    C 856 198 820 128 760 86 C 700 44 608 26 506 20
@@ -249,8 +257,8 @@ import { Component } from '@angular/core';
              VÁSÁRLÁS  (y 3120–3900)
              ════════════════════════════════ -->
 
-        <!-- Zsálya sarok – bal, nagy -->
-        <g filter="url(#wc-b)" fill="#96B095" opacity="0.62" transform="translate(-35, 3138)">
+        <!-- Zsálya sarok – bal, nagy, oldalon kívülről -->
+        <g filter="url(#wc-b)" fill="#96B095" opacity="0.62" transform="translate(-120, 3105)">
           <path d="M 50 48 C 2 102 -6 178 28 250 C 62 322 150 372 264 398
                    C 378 424 515 422 626 395 C 737 368 828 318 842 258
                    C 856 198 820 128 760 86 C 700 44 608 26 506 20
@@ -313,11 +321,11 @@ import { Component } from '@angular/core';
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      overflow: hidden;
     }
     .wc-svg {
       width: 100%;
       height: 100%;
+      overflow: visible;
     }
   `]
 })
