@@ -15,264 +15,244 @@ import { Component } from '@angular/core';
         <defs>
 
           <!--
-            BLOB FORMÁK  (symbol + use rendszer)
-            Minden symbolban két réteg: egy külső és egy kisebb belső folt,
-            ahogy az igazi vízfestékben a festék "pocsékol" és belül sötétebb.
+            NAPLÓ-HŰSÉG:
+              #C9968A  meleg dusty rose/mauve  – az oldalak nagy amoeba foltjai
+              #C8A865  meleg homokos arany     – fejléc felhő-foltok
+              #96B095  tompított zsálya        – sarok-mosások
 
-            bl = nagy, szabálytalan (hero főfolt, purchase)
-            bm = széles, vízszintes (zsálya-típusú, sávos)
-            bs = közepes kerek, aszimmetrikus (accent, echo)
+            FORMÁK:
+              #ba  – vízszintes vese/amoeba (oldalak2 nagy foltjai)
+              #bk  – sarok-kifolyásos folt (oldalak3 zsálya sarok)
+              #bh  – felhő-szerű kis accent (oldalak1 fejléc)
           -->
 
-          <!--
-            BLOB FORMÁK – 12-15 szegmenses bezier path-ok,
-            szándékos nyúlványokkal, befűzödésekkel, konkáv mélyedésekkel.
-            A filterek erre jönnek rá, tehát a végeredmény még szabálytalanabb lesz.
-          -->
-
-          <!-- BLOB LARGE: jobb oldalán nyúlvány, bal felső részén konkáv mélyedés -->
-          <symbol id="bl" viewBox="30 -10 440 410" overflow="visible">
+          <!-- BA – vízszintes vese/amoeba, a napló legjellemzőbb foltja.
+               Bal oldala elvékonyodik (farok), jobb oldala kiszélesedik.
+               Belső réteg: koncentráltabb, sötétebb mag.
+               Természetes méret: ~560 × 235 -->
+          <symbol id="ba" viewBox="15 30 560 240" overflow="visible">
             <path opacity="1"
-              d="M 242 18
-                 C 288 4,   348 10,  392 45
-                 C 436 80,  452 138, 448 185
-                 C 444 232, 428 255, 445 288
-                 C 462 321, 468 362, 442 385
-                 C 416 408, 372 398, 332 378
-                 C 292 358, 262 332, 228 342
-                 C 194 352, 172 378, 138 368
-                 C 104 358, 72  328, 58  292
-                 C 44  256, 48  212, 38  178
-                 C 28  144, 32  102, 52  72
-                 C 68  48,  88  52,  112 38
-                 C 136 24,  148 38,  172 24
-                 C 196 10,  218 24,  242 18 Z"/>
-            <path opacity="0.48"
-              d="M 238 45
-                 C 278 32,  332 38,  368 72
-                 C 404 106, 415 158, 410 202
-                 C 405 246, 388 268, 402 295
-                 C 416 322, 422 352, 398 368
-                 C 374 384, 338 375, 305 358
-                 C 272 341, 248 318, 220 326
-                 C 192 334, 172 355, 145 346
-                 C 118 337, 92  312, 80  280
-                 C 68  248, 72  210, 64  180
-                 C 56  150, 60  115, 78  92
-                 C 95  72,  115 78,  138 65
-                 C 158 54,  168 65,  190 54
-                 C 212 42,  225 52,  238 45 Z"/>
+              d="M 78 88
+                 C 52  65,  22  92,  28 135
+                 C 34 178,  75 205, 135 218
+                 C 195 231, 278 228, 355 215
+                 C 432 202, 505 180, 542 148
+                 C 579 116, 572  78, 542  55
+                 C 512  32, 465  28, 415  38
+                 C 365  48, 318  62, 265  57
+                 C 212  52, 165  42, 128  55
+                 C 102  63,  96  102,  78  88 Z"/>
+            <path opacity="0.52"
+              d="M 95 108
+                 C 72  88,  48 112,  55 150
+                 C 62 188,  98 212, 152 222
+                 C 206 232, 282 228, 352 215
+                 C 422 202, 488 182, 522 152
+                 C 548 128, 540  95, 515  75
+                 C 490  55, 448  52, 402  62
+                 C 356  72, 312  85, 262  80
+                 C 212  75, 168  65, 135  78
+                 C 112  88, 108 120,  95 108 Z"/>
           </symbol>
 
-          <!-- BLOB MEDIUM: vízszintes, bal oldalán ujjszerű nyúlvány, jobb oldala tagolt -->
-          <symbol id="bm" viewBox="20 5 450 340" overflow="visible">
+          <!-- BK – sarokból kifolyó mosás, aszimmetrikus, egyik sarka elvékonyodik.
+               Természetes méret: ~385 × 295 -->
+          <symbol id="bk" viewBox="8 0 392 302" overflow="visible">
             <path opacity="1"
-              d="M 42 162
-                 C 28 118,  32 75,   58 52
-                 C 84 29,   118 52,  152 38
-                 C 186 24,  208 -2,  248 8
-                 C 288 18,  315 52,  358 65
-                 C 401 78,  440 72,  458 108
-                 C 476 144, 462 195, 445 228
-                 C 428 261, 402 272, 418 302
-                 C 434 332, 448 358, 425 368
-                 C 402 378, 365 358, 328 345
-                 C 291 332, 262 328, 228 338
-                 C 194 348, 168 355, 135 338
-                 C 102 321, 78  292, 58  262
-                 C 38  232, 34  195, 28  172
-                 C 25  162, 40  168, 42  162 Z"/>
-            <path opacity="0.48"
-              d="M 65 168
-                 C 52 132,  58 98,   80 78
-                 C 102 58,  132 78,  162 65
-                 C 192 52,  212 28,  248 36
-                 C 284 44,  308 75,  348 88
-                 C 388 101, 422 95,  438 128
-                 C 454 161, 440 205, 425 235
-                 C 410 265, 386 275, 400 302
-                 C 414 329, 425 348, 405 356
-                 C 385 364, 352 348, 318 336
-                 C 284 324, 258 322, 228 330
-                 C 198 338, 175 345, 148 330
-                 C 121 315, 100 288, 82  262
-                 C 64  236, 62  205, 58  182
-                 C 56  168, 65  170, 65  168 Z"/>
+              d="M 22 20
+                 C 85   2, 195   8, 272  48
+                 C 349  88, 388 145, 372 202
+                 C 356 259, 295 292, 228 295
+                 C 161 298,  95 272,  55 228
+                 C 15  184,  10 128,  22  80
+                 C 30   48,  20  32,  22  20 Z"/>
+            <path opacity="0.52"
+              d="M 40 42
+                 C 95  26, 192  32, 262  68
+                 C 332 104, 365 158, 350 208
+                 C 335 258, 280 285, 220 285
+                 C 160 285, 102 262,  68 222
+                 C 34  182,  32 132,  42  92
+                 C 50   62,  40  52,  40  42 Z"/>
           </symbol>
 
-          <!-- BLOB SMALL: felső részén csipkés, alul kiugró lebeny -->
-          <symbol id="bs" viewBox="40 -15 295 305" overflow="visible">
+          <!-- BH – puha felhő-szerű folt, oldalak1 fejléc stílusában.
+               Természetes méret: ~210 × 175 -->
+          <symbol id="bh" viewBox="18 12 215 178" overflow="visible">
             <path opacity="1"
-              d="M 178 12
-                 C 212 -2,  258 5,   288 35
-                 C 318 65,  328 108, 318 142
-                 C 308 176, 288 188, 302 218
-                 C 316 248, 338 272, 318 292
-                 C 298 312, 258 305, 222 290
-                 C 186 275, 162 255, 135 268
-                 C 108 281, 82  295, 62  275
-                 C 42  255, 45  218, 52  185
-                 C 59  152, 68  128, 52  98
-                 C 36  68,  38  32,  68  15
-                 C 88  4,   108 18,  132 8
-                 C 152 0,   162 18,  178 12 Z"/>
-            <path opacity="0.48"
-              d="M 175 35
-                 C 205 22,  245 28,  270 55
-                 C 295 82,  302 122, 292 152
-                 C 282 182, 265 192, 278 218
-                 C 291 244, 310 262, 292 278
-                 C 274 294, 240 288, 210 275
-                 C 180 262, 158 245, 135 256
-                 C 112 267, 90  278, 72  260
-                 C 54  242, 58  210, 64  182
-                 C 70  154, 78  132, 64  106
-                 C 50  80,  54  52,  78  38
-                 C 95  28,  112 40,  132 32
-                 C 150 24,  158 40,  175 35 Z"/>
+              d="M 55  30
+                 C 85  12, 132  15, 168  40
+                 C 204  65, 215 108, 200 142
+                 C 185 176, 150 192, 112 186
+                 C 74  180,  42 160,  28 128
+                 C 14   96,  22  58,  55  38
+                 C 56   34,  54  32,  55  30 Z"/>
+            <path opacity="0.52"
+              d="M 68  50
+                 C 95  35, 132  38, 160  62
+                 C 188  86, 196 122, 182 152
+                 C 168 182, 138 195, 108 188
+                 C 78  181,  52 162,  40 135
+                 C 28  108,  36  75,  62  56
+                 C 65   52,  66  50,  68  50 Z"/>
           </symbol>
 
-          <!-- WATERCOLOR FILTEREK – magasabb scale = drámaibb torzítás -->
-          <!-- A – nagyon erős, hero főfoltokhoz -->
+          <!-- WATERCOLOR FILTEREK -->
+          <!-- A – nagy foltokhoz, erős torzítás -->
           <filter id="wc-a" x="-70%" y="-70%" width="240%" height="240%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.016 0.022"
+            <feTurbulence type="fractalNoise" baseFrequency="0.014 0.020"
                           numOctaves="6" seed="4" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="68"
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="72"
                                xChannelSelector="R" yChannelSelector="G" result="d"/>
             <feGaussianBlur in="d" stdDeviation="5"/>
           </filter>
-          <!-- B – közepes-erős, sávos foltokhoz -->
+          <!-- B – sarok-mosásokhoz -->
           <filter id="wc-b" x="-70%" y="-70%" width="240%" height="240%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.022 0.016"
+            <feTurbulence type="fractalNoise" baseFrequency="0.020 0.015"
                           numOctaves="5" seed="11" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="55"
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="58"
                                xChannelSelector="R" yChannelSelector="G" result="d"/>
-            <feGaussianBlur in="d" stdDeviation="4.5"/>
+            <feGaussianBlur in="d" stdDeviation="5.5"/>
           </filter>
-          <!-- C – közepes, kisebb ecsetfoltokhoz -->
+          <!-- C – kisebb accent foltokhoz -->
           <filter id="wc-c" x="-70%" y="-70%" width="240%" height="240%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.028 0.020"
+            <feTurbulence type="fractalNoise" baseFrequency="0.026 0.018"
                           numOctaves="4" seed="17" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="45"
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="48"
                                xChannelSelector="R" yChannelSelector="G" result="d"/>
             <feGaussianBlur in="d" stdDeviation="4"/>
           </filter>
-          <!-- D – lassú, széles torzítás, levendula tónushoz -->
+          <!-- D – zsálya sarokfoltokhoz, szétterülős -->
           <filter id="wc-d" x="-70%" y="-70%" width="240%" height="240%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.018 0.026"
-                          numOctaves="5" seed="23" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="58"
+            <feTurbulence type="fractalNoise" baseFrequency="0.016 0.024"
+                          numOctaves="5" seed="29" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="62"
                                xChannelSelector="R" yChannelSelector="G" result="d"/>
-            <feGaussianBlur in="d" stdDeviation="6"/>
+            <feGaussianBlur in="d" stdDeviation="6.5"/>
           </filter>
         </defs>
 
-        <!-- ═══════════════════════════════════════════
+        <!-- ════════════════════════════════════════════
              HERO  (y ≈ 0–780)
-             ═══════════════════════════════════════════ -->
+             Nagy rose amoeba jobb oldalt + zsálya sarok bal alul + arany fejléc accent
+             ════════════════════════════════════════════ -->
 
-        <!-- Korall főfolt – jobb felső, domináns -->
-        <g filter="url(#wc-a)" fill="#D4563C" opacity="0.28">
-          <use href="#bl" x="855"  y="-25"  width="435" height="382"/>
-          <use href="#bs" x="938"  y="55"   width="265" height="233" opacity="0.72"/>
+        <!-- Dusty rose vízszintes amoeba – jobb felső, domináns -->
+        <g filter="url(#wc-a)" fill="#C9968A" opacity="0.55">
+          <use href="#ba" x="620"  y="30"   width="870" height="365"/>
+          <use href="#ba" x="680"  y="120"  width="680" height="285" opacity="0.55"/>
         </g>
 
-        <!-- Zsálya folt – bal alsó -->
-        <g filter="url(#wc-b)" fill="#5EA855" opacity="0.26">
-          <use href="#bm" x="-45"  y="435"  width="405" height="340"/>
-          <use href="#bs" x="15"   y="488"  width="235" height="206" opacity="0.65"/>
+        <!-- Zsálya sarok – bal alsó -->
+        <g filter="url(#wc-b)" fill="#96B095" opacity="0.48">
+          <use href="#bk" x="-80"  y="480"  width="680" height="520"/>
+          <use href="#bk" x="-30"  y="540"  width="480" height="368" opacity="0.55"/>
         </g>
 
-        <!-- Levendula accent – bal felső -->
-        <g filter="url(#wc-d)" fill="#8A65CC" opacity="0.22">
-          <use href="#bs" x="28"   y="18"   width="262" height="230"/>
-          <use href="#bs" x="55"   y="42"   width="178" height="156" opacity="0.60"/>
+        <!-- Homokos arany felhő – bal felső accent -->
+        <g filter="url(#wc-c)" fill="#C8A865" opacity="0.42">
+          <use href="#bh" x="20"   y="25"   width="420" height="352"/>
+          <use href="#bh" x="55"   y="55"   width="295" height="247" opacity="0.55"/>
         </g>
 
-        <!-- Kis korall echo – jobb alsó sarok -->
-        <g filter="url(#wc-c)" fill="#D4563C" opacity="0.15">
-          <use href="#bs" x="1238" y="638"  width="212" height="186"/>
-        </g>
-
-        <!-- Zsálya echo – felső közép -->
-        <g filter="url(#wc-c)" fill="#5EA855" opacity="0.12">
-          <use href="#bs" x="655"  y="-18"  width="182" height="160"/>
+        <!-- Rose echo – jobb alsó -->
+        <g filter="url(#wc-c)" fill="#C9968A" opacity="0.28">
+          <use href="#bh" x="1180" y="620"  width="320" height="268"/>
         </g>
 
 
-        <!-- ═══════════════════════════════════════════
+        <!-- ════════════════════════════════════════════
              BEMUTATÓ  (y ≈ 780–1560)
-             ═══════════════════════════════════════════ -->
+             ════════════════════════════════════════════ -->
 
-        <g filter="url(#wc-d)" fill="#8A65CC" opacity="0.13">
-          <use href="#bl" x="1178" y="778"  width="312" height="274"/>
-        </g>
-        <g filter="url(#wc-a)" fill="#D4563C" opacity="0.11">
-          <use href="#bl" x="-52"  y="848"  width="302" height="266"/>
-        </g>
-        <g filter="url(#wc-b)" fill="#5EA855" opacity="0.10">
-          <use href="#bm" x="428"  y="1418" width="555" height="465" opacity="0.5"/>
+        <!-- Rose amoeba – jobb oldal -->
+        <g filter="url(#wc-a)" fill="#C9968A" opacity="0.38">
+          <use href="#ba" x="760"  y="850"  width="780" height="327"/>
+          <use href="#ba" x="820"  y="945"  width="580" height="244" opacity="0.55"/>
         </g>
 
+        <!-- Zsálya sarok – bal oldal -->
+        <g filter="url(#wc-d)" fill="#96B095" opacity="0.35">
+          <use href="#bk" x="-100" y="980"  width="620" height="474"/>
+        </g>
 
-        <!-- ═══════════════════════════════════════════
+        <!-- Arany felhő – szekció alján közép -->
+        <g filter="url(#wc-c)" fill="#C8A865" opacity="0.28">
+          <use href="#ba" x="280"  y="1420" width="820" height="344"/>
+        </g>
+
+
+        <!-- ════════════════════════════════════════════
              MIT TARTALMAZ  (y ≈ 1560–2340)
-             ═══════════════════════════════════════════ -->
+             ════════════════════════════════════════════ -->
 
-        <g filter="url(#wc-b)" fill="#5EA855" opacity="0.16">
-          <use href="#bl" x="-22"  y="1598" width="322" height="283"/>
-        </g>
-        <g filter="url(#wc-c)" fill="#D4563C" opacity="0.13">
-          <use href="#bl" x="1128" y="1798" width="332" height="292"/>
-        </g>
-        <g filter="url(#wc-d)" fill="#8A65CC" opacity="0.10">
-          <use href="#bm" x="438"  y="2228" width="485" height="406"/>
+        <!-- Zsálya – bal felső sarok -->
+        <g filter="url(#wc-b)" fill="#96B095" opacity="0.40">
+          <use href="#bk" x="-90"  y="1580" width="660" height="505"/>
+          <use href="#bk" x="-30"  y="1650" width="460" height="352" opacity="0.55"/>
         </g>
 
+        <!-- Rose amoeba – jobb oldal -->
+        <g filter="url(#wc-a)" fill="#C9968A" opacity="0.35">
+          <use href="#ba" x="740"  y="1900" width="790" height="332"/>
+          <use href="#ba" x="820"  y="1985" width="590" height="248" opacity="0.52"/>
+        </g>
 
-        <!-- ═══════════════════════════════════════════
+        <!-- Arany accent – alsó közép -->
+        <g filter="url(#wc-c)" fill="#C8A865" opacity="0.25">
+          <use href="#bh" x="480"  y="2230" width="450" height="377"/>
+        </g>
+
+
+        <!-- ════════════════════════════════════════════
              GALÉRIA  (y ≈ 2340–3120)
-             ═══════════════════════════════════════════ -->
+             ════════════════════════════════════════════ -->
 
-        <g filter="url(#wc-d)" fill="#8A65CC" opacity="0.11">
-          <use href="#bm" x="328"  y="2338" width="705" height="591"/>
-        </g>
-        <g filter="url(#wc-a)" fill="#D4563C" opacity="0.12">
-          <use href="#bs" x="1228" y="2978" width="242" height="213"/>
-        </g>
-        <g filter="url(#wc-c)" fill="#5EA855" opacity="0.11">
-          <use href="#bs" x="-12"  y="2898" width="222" height="195"/>
+        <!-- Arany vízszintes sweep – felső -->
+        <g filter="url(#wc-a)" fill="#C8A865" opacity="0.32">
+          <use href="#ba" x="80"   y="2360" width="1100" height="462"/>
         </g>
 
+        <!-- Zsálya – jobb alsó sarok -->
+        <g filter="url(#wc-d)" fill="#96B095" opacity="0.32">
+          <use href="#bk" x="1100" y="2820" width="480" height="368"
+               transform="scale(-1,1) translate(-2060,0)"/>
+        </g>
 
-        <!-- ═══════════════════════════════════════════
+        <!-- Rose – bal alsó -->
+        <g filter="url(#wc-c)" fill="#C9968A" opacity="0.28">
+          <use href="#bk" x="-60"  y="2900" width="520" height="398"/>
+        </g>
+
+
+        <!-- ════════════════════════════════════════════
              VÁSÁRLÁS  (y ≈ 3120–3900)
-             ═══════════════════════════════════════════ -->
+             ════════════════════════════════════════════ -->
 
-        <!-- Levendula – bal oldal -->
-        <g filter="url(#wc-d)" fill="#8A65CC" opacity="0.22">
-          <use href="#bl" x="28"   y="3178" width="372" height="328"/>
-          <use href="#bs" x="78"   y="3238" width="232" height="204" opacity="0.70"/>
+        <!-- Zsálya sarok – bal -->
+        <g filter="url(#wc-b)" fill="#96B095" opacity="0.42">
+          <use href="#bk" x="-100" y="3140" width="720" height="551"/>
+          <use href="#bk" x="-40"  y="3220" width="510" height="390" opacity="0.55"/>
         </g>
 
-        <!-- Korall – jobb oldal -->
-        <g filter="url(#wc-a)" fill="#D4563C" opacity="0.20">
-          <use href="#bl" x="1058" y="3318" width="392" height="346"/>
-          <use href="#bs" x="1128" y="3378" width="242" height="213" opacity="0.65"/>
+        <!-- Rose amoeba – jobb oldal -->
+        <g filter="url(#wc-a)" fill="#C9968A" opacity="0.45">
+          <use href="#ba" x="580"  y="3320" width="920" height="386"/>
+          <use href="#ba" x="650"  y="3420" width="700" height="294" opacity="0.55"/>
         </g>
 
-        <!-- Zsálya alap -->
-        <g filter="url(#wc-b)" fill="#5EA855" opacity="0.12">
-          <use href="#bm" x="418"  y="3748" width="482" height="404"/>
+        <!-- Arany felhő alap -->
+        <g filter="url(#wc-c)" fill="#C8A865" opacity="0.28">
+          <use href="#ba" x="200"  y="3720" width="960" height="403"/>
         </g>
 
 
-        <!-- ═══════════════════════════════════════════
-             FOOTER (y ≈ 3900–)
-             ═══════════════════════════════════════════ -->
+        <!-- ════════════════════════════════════════════
+             FOOTER  (y ≈ 3900–)
+             ════════════════════════════════════════════ -->
 
-        <g filter="url(#wc-c)" fill="#D4563C" opacity="0.08">
-          <use href="#bm" x="368"  y="3928" width="645" height="540"/>
+        <g filter="url(#wc-d)" fill="#C9968A" opacity="0.18">
+          <use href="#ba" x="100"  y="3930" width="1100" height="462"/>
         </g>
 
       </svg>
