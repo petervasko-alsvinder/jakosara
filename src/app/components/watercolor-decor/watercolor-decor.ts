@@ -24,107 +24,146 @@ import { Component } from '@angular/core';
             bs = közepes kerek, aszimmetrikus (accent, echo)
           -->
 
-          <!-- BLOB LARGE: szabálytalan, bal oldala lapított, jobb oldala kidudorodik -->
-          <symbol id="bl" viewBox="45 0 405 355" overflow="visible">
+          <!--
+            BLOB FORMÁK – 12-15 szegmenses bezier path-ok,
+            szándékos nyúlványokkal, befűzödésekkel, konkáv mélyedésekkel.
+            A filterek erre jönnek rá, tehát a végeredmény még szabálytalanabb lesz.
+          -->
+
+          <!-- BLOB LARGE: jobb oldalán nyúlvány, bal felső részén konkáv mélyedés -->
+          <symbol id="bl" viewBox="30 -10 440 410" overflow="visible">
             <path opacity="1"
-              d="M 228 15
-                 C 282 2,  355 18,  395 68
-                 C 435 118, 438 188, 418 240
-                 C 398 292, 350 328, 295 338
-                 C 240 348, 178 335, 135 302
-                 C 92 269,  68 220,  62 170
-                 C 56 120,  72 66,   110 40
-                 C 128 28,  148 38,  172 26
-                 C 195 14,  212 18,  228 15 Z"/>
-            <!-- belső nedves réteg -->
-            <path opacity="0.5"
-              d="M 218 40
-                 C 265 26,  328 40,  365 82
-                 C 402 124, 404 185, 382 230
-                 C 360 275, 315 305, 265 312
-                 C 215 319, 160 305, 125 275
-                 C 90 245,  75 202,  80 162
-                 C 85 122,  108 86,  142 65
-                 C 162 52,  186 60,  208 48
-                 C 215 44,  216 40,  218 40 Z"/>
+              d="M 242 18
+                 C 288 4,   348 10,  392 45
+                 C 436 80,  452 138, 448 185
+                 C 444 232, 428 255, 445 288
+                 C 462 321, 468 362, 442 385
+                 C 416 408, 372 398, 332 378
+                 C 292 358, 262 332, 228 342
+                 C 194 352, 172 378, 138 368
+                 C 104 358, 72  328, 58  292
+                 C 44  256, 48  212, 38  178
+                 C 28  144, 32  102, 52  72
+                 C 68  48,  88  52,  112 38
+                 C 136 24,  148 38,  172 24
+                 C 196 10,  218 24,  242 18 Z"/>
+            <path opacity="0.48"
+              d="M 238 45
+                 C 278 32,  332 38,  368 72
+                 C 404 106, 415 158, 410 202
+                 C 405 246, 388 268, 402 295
+                 C 416 322, 422 352, 398 368
+                 C 374 384, 338 375, 305 358
+                 C 272 341, 248 318, 220 326
+                 C 192 334, 172 355, 145 346
+                 C 118 337, 92  312, 80  280
+                 C 68  248, 72  210, 64  180
+                 C 56  150, 60  115, 78  92
+                 C 95  72,  115 78,  138 65
+                 C 158 54,  168 65,  190 54
+                 C 212 42,  225 52,  238 45 Z"/>
           </symbol>
 
-          <!-- BLOB MEDIUM: laposabb, vízszintes irányú, egyik oldala "befűződik" -->
-          <symbol id="bm" viewBox="30 15 390 325" overflow="visible">
+          <!-- BLOB MEDIUM: vízszintes, bal oldalán ujjszerű nyúlvány, jobb oldala tagolt -->
+          <symbol id="bm" viewBox="20 5 450 340" overflow="visible">
             <path opacity="1"
-              d="M 48 148
-                 C 65 85,   118 42,  182 32
-                 C 246 22,  322 50,  366 102
-                 C 410 154, 412 224, 382 268
-                 C 352 312, 295 334, 238 328
-                 C 181 322, 125 298, 90 258
-                 C 55 218,  38 168,  48 148 Z"/>
-            <!-- belső nedves réteg -->
-            <path opacity="0.5"
-              d="M 72 158
-                 C 88 108,  135 72,  192 64
-                 C 249 56,  315 80,  350 125
-                 C 385 170, 382 232, 355 268
-                 C 328 304, 278 318, 230 312
-                 C 182 306, 138 285, 108 252
-                 C 78 219,  62 178,  72 158 Z"/>
+              d="M 42 162
+                 C 28 118,  32 75,   58 52
+                 C 84 29,   118 52,  152 38
+                 C 186 24,  208 -2,  248 8
+                 C 288 18,  315 52,  358 65
+                 C 401 78,  440 72,  458 108
+                 C 476 144, 462 195, 445 228
+                 C 428 261, 402 272, 418 302
+                 C 434 332, 448 358, 425 368
+                 C 402 378, 365 358, 328 345
+                 C 291 332, 262 328, 228 338
+                 C 194 348, 168 355, 135 338
+                 C 102 321, 78  292, 58  262
+                 C 38  232, 34  195, 28  172
+                 C 25  162, 40  168, 42  162 Z"/>
+            <path opacity="0.48"
+              d="M 65 168
+                 C 52 132,  58 98,   80 78
+                 C 102 58,  132 78,  162 65
+                 C 192 52,  212 28,  248 36
+                 C 284 44,  308 75,  348 88
+                 C 388 101, 422 95,  438 128
+                 C 454 161, 440 205, 425 235
+                 C 410 265, 386 275, 400 302
+                 C 414 329, 425 348, 405 356
+                 C 385 364, 352 348, 318 336
+                 C 284 324, 258 322, 228 330
+                 C 198 338, 175 345, 148 330
+                 C 121 315, 100 288, 82  262
+                 C 64  236, 62  205, 58  182
+                 C 56  168, 65  170, 65  168 Z"/>
           </symbol>
 
-          <!-- BLOB SMALL: kerek, de aszimmetrikus – bal felső oldala be van nyomva -->
-          <symbol id="bs" viewBox="50 -12 290 272" overflow="visible">
+          <!-- BLOB SMALL: felső részén csipkés, alul kiugró lebeny -->
+          <symbol id="bs" viewBox="40 -15 295 305" overflow="visible">
             <path opacity="1"
-              d="M 175 12
-                 C 218 -2,  268 12,  298 50
-                 C 328 88,  332 142, 312 182
-                 C 292 222, 250 248, 205 250
-                 C 160 252, 115 236, 88 202
-                 C 61 168,  58 122,  72 88
-                 C 86 54,   118 28,  158 15
-                 C 164 13,  170 13,  175 12 Z"/>
-            <!-- belső nedves réteg -->
-            <path opacity="0.5"
-              d="M 178 35
-                 C 214 22,  258 35,  282 68
-                 C 306 101, 305 148, 285 182
-                 C 265 216, 228 235, 190 235
-                 C 152 235, 115 222, 92 194
-                 C 69 166,  68 125,  82 97
-                 C 96 69,   125 50,  158 40
-                 C 164 38,  172 36,  178 35 Z"/>
+              d="M 178 12
+                 C 212 -2,  258 5,   288 35
+                 C 318 65,  328 108, 318 142
+                 C 308 176, 288 188, 302 218
+                 C 316 248, 338 272, 318 292
+                 C 298 312, 258 305, 222 290
+                 C 186 275, 162 255, 135 268
+                 C 108 281, 82  295, 62  275
+                 C 42  255, 45  218, 52  185
+                 C 59  152, 68  128, 52  98
+                 C 36  68,  38  32,  68  15
+                 C 88  4,   108 18,  132 8
+                 C 152 0,   162 18,  178 12 Z"/>
+            <path opacity="0.48"
+              d="M 175 35
+                 C 205 22,  245 28,  270 55
+                 C 295 82,  302 122, 292 152
+                 C 282 182, 265 192, 278 218
+                 C 291 244, 310 262, 292 278
+                 C 274 294, 240 288, 210 275
+                 C 180 262, 158 245, 135 256
+                 C 112 267, 90  278, 72  260
+                 C 54  242, 58  210, 64  182
+                 C 70  154, 78  132, 64  106
+                 C 50  80,  54  52,  78  38
+                 C 95  28,  112 40,  132 32
+                 C 150 24,  158 40,  175 35 Z"/>
           </symbol>
 
-          <!-- WATERCOLOR FILTEREK -->
-          <!-- A – erős torzítás, hero főfoltokhoz -->
-          <filter id="wc-a" x="-60%" y="-60%" width="220%" height="220%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.018 0.025"
-                          numOctaves="5" seed="4" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="45"
+          <!-- WATERCOLOR FILTEREK – magasabb scale = drámaibb torzítás -->
+          <!-- A – nagyon erős, hero főfoltokhoz -->
+          <filter id="wc-a" x="-70%" y="-70%" width="240%" height="240%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.016 0.022"
+                          numOctaves="6" seed="4" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="68"
                                xChannelSelector="R" yChannelSelector="G" result="d"/>
             <feGaussianBlur in="d" stdDeviation="5"/>
           </filter>
-          <!-- B – közepes torzítás, zsálya sávokhoz -->
-          <filter id="wc-b" x="-60%" y="-60%" width="220%" height="220%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.024 0.018"
-                          numOctaves="4" seed="11" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="35"
+          <!-- B – közepes-erős, sávos foltokhoz -->
+          <filter id="wc-b" x="-70%" y="-70%" width="240%" height="240%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.022 0.016"
+                          numOctaves="5" seed="11" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="55"
+                               xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feGaussianBlur in="d" stdDeviation="4.5"/>
+          </filter>
+          <!-- C – közepes, kisebb ecsetfoltokhoz -->
+          <filter id="wc-c" x="-70%" y="-70%" width="240%" height="240%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.028 0.020"
+                          numOctaves="4" seed="17" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="45"
                                xChannelSelector="R" yChannelSelector="G" result="d"/>
             <feGaussianBlur in="d" stdDeviation="4"/>
           </filter>
-          <!-- C – finomabb, kisebb ecsetfoltokhoz -->
-          <filter id="wc-c" x="-60%" y="-60%" width="220%" height="220%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.03 0.022"
-                          numOctaves="3" seed="17" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="26"
+          <!-- D – lassú, széles torzítás, levendula tónushoz -->
+          <filter id="wc-d" x="-70%" y="-70%" width="240%" height="240%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.018 0.026"
+                          numOctaves="5" seed="23" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="58"
                                xChannelSelector="R" yChannelSelector="G" result="d"/>
-            <feGaussianBlur in="d" stdDeviation="3.5"/>
-          </filter>
-          <!-- D – levendula-tónushoz, lassabb torzítás -->
-          <filter id="wc-d" x="-60%" y="-60%" width="220%" height="220%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.028"
-                          numOctaves="4" seed="23" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="30"
-                               xChannelSelector="R" yChannelSelector="G" result="d"/>
-            <feGaussianBlur in="d" stdDeviation="5"/>
+            <feGaussianBlur in="d" stdDeviation="6"/>
           </filter>
         </defs>
 
